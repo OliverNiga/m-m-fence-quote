@@ -1,50 +1,68 @@
-# Welcome to your Expo app 👋
+# M&M Fence Quote App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile quoting app built for **M&M Fence & Deck** — a fencing and decking business — to create, manage, and export professional customer quotes in the field.
 
-## Get started
+Built with React Native and Expo.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Overview
 
-2. Start the app
+Field reps use this app to build detailed quotes on-site, attach reference photos, sketch a layout drawing, and share a polished PDF with the customer — all from their phone or tablet.
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Quote Management** — Create, edit, duplicate, and delete quotes with full customer and project details
+- **Fence & Gate Segments** — Dynamically add multiple fence and gate line items per quote (material, style, height, length, price)
+- **Layout Drawing Board** — Freehand canvas powered by Skia with multi-color support, stroke control, eraser, grid overlay, and undo/redo
+- **Reference Photos** — Attach job-site photos via camera or photo library
+- **PDF Export** — Generate and share a branded PDF quote with company logo, itemized tables, and payment details
+- **Search & Sort** — Find and organize saved quotes by name, date, or other fields
+- **Offline-First** — All data stored locally on-device with no internet required
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Tech Stack
 
-When you're ready, run:
+| Layer | Technology |
+|---|---|
+| Framework | React Native 0.74 + Expo 51 |
+| Language | TypeScript |
+| Navigation | React Navigation (native stack) |
+| State Management | Zustand |
+| Local Storage | AsyncStorage |
+| Drawing Canvas | Shopify React Native Skia |
+| PDF Generation | expo-print + expo-sharing |
+| Camera / Photos | expo-image-picker, expo-media-library |
+| Animations | React Native Reanimated |
 
-```bash
-npm run reset-project
+---
+
+## App Structure
+
+```
+app/
+├── screens/
+│   ├── HomeScreen.tsx        # Quote list with search and sort
+│   ├── QuoteFormScreen.tsx   # Full quote builder form
+│   └── DrawingScreen.tsx     # Interactive layout drawing canvas
+├── components/               # Reusable UI components
+├── store/                    # Zustand stores (quotes, drawing)
+├── pdf/                      # HTML-to-PDF quote template
+├── utils/                    # Theme, formatting, responsive helpers
+└── types/                    # TypeScript type definitions
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Platform
 
-To learn more about developing your project with Expo, look at the following resources:
+Targets **iOS** and **Android**. Responsive layout adapts between phone and tablet, with two-column form layout in tablet landscape mode.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## About
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Built by [Oliver Niga](https://github.com/oliverniga) for M&M Fence & Deck.
